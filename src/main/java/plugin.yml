@@ -1,0 +1,7 @@
+name: AdvancedWhitelistPlus
+version: 1.0.0
+author: Shades161
+description: Adds in advanced Whitelist features.
+webiste: http://dev.bukkit.org/bukkit-plugins/advancedwhitelistplus/
+
+main: com.cloudcraftgaming.advancedwhitelistplus.Main
