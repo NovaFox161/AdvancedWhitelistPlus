@@ -1,5 +1,7 @@
 package com.cloudcraftgaming.advancedwhitelistplus;
 
+import com.cloudcraftgaming.advancedwhitelistplus.listeners.JoinListener;
+import com.cloudcraftgaming.advancedwhitelistplus.utils.FileManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -8,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * For Project: AdvancedWhiteList
  */
 public class Main extends JavaPlugin {
-    static Main plugin;
+    public static Main plugin;
 
     @Override
     public void onDisable() {}
@@ -17,6 +19,10 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
+        FileManager.createConfig();
 
+        FileManager.checkFileVersions();
+
+        getServer().getPluginManager().registerEvents(new JoinListener(this), this);
     }
 }
